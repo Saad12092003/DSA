@@ -1,0 +1,48 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+class Stack {
+    vector<int> v;
+public:
+    void push(int val) {
+        v.push_back(val);
+    }
+
+    void pop() {
+        if (!v.empty())
+            v.pop_back();
+    }
+
+    int top() {
+        if (!v.empty())
+            return v.back();
+        return -1; // or throw exception
+    }
+
+    bool empty() {
+        return v.empty();
+    }
+
+    void display() {
+        for (int i = v.size() - 1; i >= 0; i--) {
+            cout << v[i] << " ";
+        }
+        cout << endl;
+    }
+};
+
+int main() {
+    Stack s;
+    int x,y,z;
+    cin>>x;
+    cin>>y;
+    cin>>z;
+   s.push(x);
+   s.push(y);
+   s.push(z);
+   s.pop();
+
+    s.display();
+    return 0;
+}
