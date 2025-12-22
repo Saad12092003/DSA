@@ -1,0 +1,54 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define SIZE 5
+int arr[SIZE];
+int f = 0;
+int r = -1;
+
+
+void enqueue(int val) {
+    if (r ==SIZE -1) {
+        cout << "Queue Overflow!" << endl;
+        return;
+    }
+    r++;
+    arr[r] = val;
+
+}
+
+void dequeue() {
+    if (f>r) {
+        cout << "Queue Underflow!" << endl;
+        return ;
+    }
+    f++;
+
+}
+
+void display() {
+
+
+    for (int i = f; i <= r; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    enqueue(10);
+    enqueue(20);
+    enqueue(30);
+    enqueue(40);
+    enqueue(50);
+    enqueue(60);
+
+    display();
+
+    dequeue();
+    dequeue();
+
+    display();
+
+    return 0;
+}
